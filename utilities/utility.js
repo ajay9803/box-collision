@@ -1,4 +1,4 @@
-// Utility function to generate a random color
+// utility function to generate a random color
 function getRandomColor() {
   const letters = "0123456789ABCDEF";
   let color = "#";
@@ -8,7 +8,7 @@ function getRandomColor() {
   return color;
 }
 
-// Utility function to generate a random number within a range
+// utility function to generate a random number within a range
 function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
