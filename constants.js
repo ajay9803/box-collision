@@ -1,8 +1,8 @@
-// Inner container
+// inner container
 
 const container = document.getElementById("container");
 
-// Basic variable declarations
+// basic variable declarations
 
 let containerWidth = container.clientWidth;
 let containerHeight = container.clientHeight;

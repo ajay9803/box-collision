@@ -1,4 +1,4 @@
-// Resize event listener
+// resize event listener
 
 window.addEventListener("resize", () => {
   containerWidth = container.clientWidth;
@@ -6,9 +6,9 @@ window.addEventListener("resize", () => {
   init();
 });
 
-// Initialize the balls
+// initialize the balls
 function init() {
-  // Remove existing balls
+  // remove existing balls
   ballArray.length = 0;
   document.querySelectorAll(".ball").forEach((ball) => ball.remove());
 
@@ -61,30 +61,26 @@ function handleCollisions() {
       const distance = Math.sqrt(dx * dx + dy * dy);
 
       if (distance <= ball1.radius + ball2.radius) {
-        // Resolve collision
         const angle = Math.atan2(dy, dx);
         const sin = Math.sin(angle);
         const cos = Math.cos(angle);
 
-        // Rotate ball1's velocity
         const vx1 = ball1.dx * cos + ball1.dy * sin;
         const vy1 = ball1.dy * cos - ball1.dx * sin;
 
-        // Rotate ball2's velocity
         const vx2 = ball2.dx * cos + ball2.dy * sin;
         const vy2 = ball2.dy * cos - ball2.dx * sin;
 
-        // Collision reaction: Swap velocities in x direction (1D collision)
         const vx1Final = vx2;
         const vx2Final = vx1;
 
-        // Update ball velocities based on rotated values
+        // update ball velocities based on rotated values
         ball1.dx = vx1Final * cos - vy1 * sin;
         ball1.dy = vy1 * cos + vx1Final * sin;
         ball2.dx = vx2Final * cos - vy2 * sin;
         ball2.dy = vy2 * cos + vx2Final * sin;
 
-        // Adjust positions to prevent overlap
+        // ddjust positions to prevent overlap
         const overlap = ball1.radius + ball2.radius - distance;
         ball1.x += (overlap / 2) * cos;
         ball1.y += (overlap / 2) * sin;
@@ -95,7 +91,7 @@ function handleCollisions() {
   }
 }
 
-// Run animation loop
+// run animation loop
 function animate() {
   ballArray.forEach((ball) => ball.move());
   handleCollisions();

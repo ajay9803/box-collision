@@ -25,11 +25,11 @@ class Ball {
   }
 
   move() {
-    // Update position
+    // update position
     this.x += this.dx;
     this.y += this.dy;
 
-    // Check for wall-collision
+    // check for wall-collisions
     if (
       (this.x <= 0 && this.dx < 0) ||
       (this.x + this.radius * 2 >= containerWidth && this.dx > 0)
