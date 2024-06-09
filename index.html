@@ -2,16 +2,111 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box collision - Canvas</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment Table - Sagar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Outfit";
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .title-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 90vw;
+            max-width: 1200px;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
-    <script src="utilities/utility.js"></script>
-    <script src="canvas.js"></script>
+    <div class="title-text">
+        <h1>Sagar Prajapati</h1>
+        <h3>Group M</h3>
+        <h3>Roll No. 26</h3>
+    </div>
+    <table>
+        <tr>
+            <th>Assignment Title</th>
+            <th>Category</th>
+            <th>Code</th>
+            <th>Github Page</th>
+        </tr>
+        <tr>
+            <td>Assignment 1 - Responsive Design</td>
+            <td>HTML/CSS</td>
+            <td><a href="https://github.com/ajay9803/lf-assignment-1">Code</a></td>
+            <td><a href="https://ajay9803.github.io/lf-assignment-1">Host</a></td>
+        </tr>
+        <tr>
+            <td>Assignment 1 - Responsive Design / BEM</td>
+            <td>HTML/CSS</td>
+            <td><a href="https://github.com/ajay9803/lf-assignment-1">Code</a></td>
+            <td><a href="https://ajay9803.github.io/lf-assignment-1">Host</a></td>
+        </tr>
+        <tr>
+            <td>Assignment 2 - Responsive Design / SASS</td>
+            <td>HTML/CSS</td>
+            <td><a href="https://github.com/ajay9803/lf-assignment-2">Code</a></td>
+            <td><a href="https://ajay9803.github.io/lf-assignment-2">Host</a></td>
+        </tr>
+        <tr>
+            <td>Assignment 3 - Box Collision</td>
+            <td>JS</td>
+            <td><a href="https://github.com/ajay9803/box-collision">Code</a></td>
+            <td><a href="https://ajay9803.github.io/box-collision/">Host</a></td>
+        </tr>
+    </table>
 </body>
 
 </html>
