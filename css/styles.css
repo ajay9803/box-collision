@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
 
 #container {
@@ -18,4 +18,14 @@ body {
 .ball {
   position: absolute;
   border-radius: 50%;
+}
+
+.circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(63, 63, 231);
+  opacity: 0.4;
+  display: none;
 }

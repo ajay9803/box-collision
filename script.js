@@ -5,13 +5,29 @@ const container = document.getElementById("container");
 let containerWidth = container.clientWidth;
 let containerHeight = container.clientHeight;
 
-// resize event listener
+// resize - event listener
 
 window.addEventListener("resize", () => {
   containerWidth = container.clientWidth;
   containerHeight = container.clientHeight;
   init();
 });
+
+// mouse move - event listener
+
+window.addEventListener("mousemove", (event) => {
+  // Update the mouse position
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
+
+  updateCirclePosition();
+});
+
+function updateCirclePosition() {
+  circle.style.left = `${mouse.x - circle.clientWidth / 2}px`;
+  circle.style.top = `${mouse.y - circle.clientHeight / 2}px`;
+  circle.style.display = 'block';
+}
 
 // initialize the balls
 function init() {
@@ -91,7 +107,7 @@ function handleCollisions() {
         ball2.dx = vx2Final * cos - vy2 * sin;
         ball2.dy = vy2 * cos + vx2Final * sin;
 
-        // ddjust positions to prevent overlap
+        // adjust positions to prevent overlap
         const overlap = ball1.radius + ball2.radius - distance;
         ball1.x += (overlap / 2) * cos;
         ball1.y += (overlap / 2) * sin;

@@ -5,6 +5,7 @@ class Ball {
     this.dx = dx;
     this.dy = dy;
     this.radius = radius;
+    this.minRadius = radius;
     this.color = color;
     this.element = document.createElement("div");
     this.element.className = "ball";
@@ -41,6 +42,25 @@ class Ball {
       (this.y + this.radius * 2 >= containerHeight && this.dy > 0)
     ) {
       this.dy = -this.dy;
+    }
+
+    // check if the ball falls within the range of mouse hover
+
+    if (
+      mouse.x - this.x < 100 &&
+      mouse.x - this.x > -100 &&
+      mouse.y - this.y < 100 &&
+      mouse.y - this.y > -100
+    ) {
+      if (this.radius < maxRadius) {
+        this.radius += 2;
+        this.element.style.width = `${this.radius * 2}px`;
+        this.element.style.height = `${this.radius * 2}px`;
+      }
+    } else if (this.radius > this.minRadius) {
+      this.radius -= 2;
+      this.element.style.width = `${this.radius * 2}px`;
+      this.element.style.height = `${this.radius * 2}px`;
     }
 
     this.updatePosition();
